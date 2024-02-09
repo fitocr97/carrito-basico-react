@@ -1,4 +1,5 @@
 import { Component } from "react";  
+import Productos from "./components/Productos";  //llamamos al componente
 
 class App extends Component{
   state = {
@@ -11,7 +12,10 @@ class App extends Component{
 
   render () {
     return (
-      <p>hola mundo</p>
+      <Productos  //utlizamos el componente
+        agregarAlCarro={() => console.log('no hace nasda')} 
+        productos = {this.state.productos}
+      />
     )
   }
 }

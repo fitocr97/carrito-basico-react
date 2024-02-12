@@ -17,11 +17,14 @@ const styles={
 
 class Navbar extends Component{
     render(){
-        const {carro} = this.props //sacar al carro se paso en el nav en app.js
+        
+        const {carro, esCarroVisible, mostrarCarro } = this.props //sacar al carro se paso en el nav en app.js
+        //console.log("nav:",esCarroVisible)
         return(
+            
             <nav style={styles.navbar}>
                 <Logo/>
-                <Carro carro={carro}/>
+                <Carro carro={carro} esCarroVisible={esCarroVisible} mostrarCarro={mostrarCarro}/>
             </nav>
         )
     }

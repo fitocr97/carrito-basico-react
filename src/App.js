@@ -13,8 +13,8 @@ class App extends Component{
     ],
     carro:[
       /*{ name: 'shell', price: 3000, img: '/productos/shell.jpg', cantidad: 0}*/
-
     ],
+    esCarroVisible: false, //propiedad 
   }
 
   agregarAlCarro = (producto) => { /* prevenir el constexto de this */
@@ -35,11 +35,18 @@ class App extends Component{
     })
   }
 
+  mostrarCarro = () => {
+    if(!this.state.carro.length){ //evitar que se abra al no tener nada y agregar y se muestre solo
+      return
+    }
+    this.setState({esCarroVisible: !this.state.esCarroVisible}) //se pasa nivel abajo al nav
+  }
+
   render () {
-    console.log(this.state.carro)
+    const {esCarroVisible} = this.state
     return (
       <div>
-        <Navbar carro={this.state.carro}/>
+        <Navbar carro={this.state.carro} esCarroVisible={esCarroVisible} mostrarCarro={this.mostrarCarro}/>
         <Layout>
           <Title/>
           <Productos  //utlizamos el componente

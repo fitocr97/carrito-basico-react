@@ -6,8 +6,9 @@ const styles = {
         color: 'white',
         border: 'solid 1px black',
         padding: '10px',
-        borderRadius: '5px'
-    }
+        borderRadius: '5px',
+        cursor: 'pointer',
+    },
 }
 
 class Button extends Component {

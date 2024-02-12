@@ -15,7 +15,7 @@ const styles ={ //estilos para el  div del producto
 
 class Producto extends Component{
     render() {
-        console.log(this.props) //ver la info del producto
+       /* console.log(this.props) //ver la info del producto*/
         const {producto, agregarAlCarro } = this.props
         return (
             <div style={styles.producto}>
